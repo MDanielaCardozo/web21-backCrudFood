@@ -6,8 +6,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["rutas", "controlador", "BD mongoDB", "middlewares"],
+  "keywords": [
+    "rutas",
+    "controlador",
+    "BD mongoDB",
+    "middlewares"
+  ],
   "author": "Daniela Cardozo",
   "type": "module",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }
