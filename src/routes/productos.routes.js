@@ -5,5 +5,4 @@ const router = Router();
 
 router.route("/test").get(prueba)
 
-
 export default router;
