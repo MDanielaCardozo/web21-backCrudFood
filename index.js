@@ -8,3 +8,4 @@ server.app.use("/api", router)
 
 //escuche el puerto en cuestion
 server.listen()
+
