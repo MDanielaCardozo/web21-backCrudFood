@@ -4,10 +4,22 @@
   "description": "Backend del proyecto crudFood",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index",
+    "dev": "node --env-file .env --watch index"
   },
-  "keywords": ["rutas", "controlador", "BD mongoDB", "middlewares"],
+  "keywords": [
+    "rutas",
+    "controlador",
+    "BD mongoDB",
+    "middlewares"
+  ],
   "author": "Daniela Cardozo",
   "type": "module",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mongoose": "^9.6.2",
+    "morgan": "^1.10.1"
+  }
 }
