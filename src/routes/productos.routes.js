@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { borrarProductoPorID, crearProducto, editarProductoPorID, listarProductos, obtenerProducto, prueba } from "../controllers/productos.controllers.js";
 import validacionProducto from "../middlewares/validacionProducto.js";
+import validacionIdProducto from "../middlewares/validacionIdProducto.js";
 
 const router = Router();
 
@@ -8,6 +9,6 @@ router.route("/test").get(prueba)
 
 router.route('/').post([validacionProducto], crearProducto).get(listarProductos)
 
-router.route('/:id').get(obtenerProducto).delete(borrarProductoPorID).put(editarProductoPorID)
+router.route('/:id').get(validacionIdProducto, obtenerProducto).delete(borrarProductoPorID, validacionIdProducto).put([validacionProducto, validacionIdProducto], editarProductoPorID)
 
 export default router;
