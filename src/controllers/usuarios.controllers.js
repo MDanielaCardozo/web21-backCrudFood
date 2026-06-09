@@ -41,6 +41,7 @@ export const login = async (req, res) => {
         if (!passwordValido) {
             return res.status(401).json({ mensaje: "Contraseña incorrecta"})
         }
+        res.status(200).json({ mensaje: "Usuario logueado correctamente", usuario: usuarioBuscado.nombreUsuario})
     } catch (error) {
         console.error(error);
         res
