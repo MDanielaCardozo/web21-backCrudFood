@@ -1,5 +1,5 @@
 import { body } from "express-validator";
-import Producto from "../models/producto";
+import Producto from "../models/producto.js";
 
 const validacionProducto = [
     //invocamos al body(chequeamos que hay en el body de la solicitud)
