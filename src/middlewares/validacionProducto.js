@@ -1,4 +1,5 @@
 import { body } from "express-validator";
+import resultadoValidacion from "./resultadoValidacion.js"
 import Producto from "../models/producto.js";
 
 const validacionProducto = [
