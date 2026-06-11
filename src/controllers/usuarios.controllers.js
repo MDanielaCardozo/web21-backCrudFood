@@ -47,7 +47,7 @@ export const login = async (req, res) => {
       return res.status(401).json({ mensaje: "Contraseña incorrecta" });
     }
     //generar el token
-    const token = generarJWT(usuarioBuscado.nombreUsuario, email);
+    const token = generarJWT(usuarioBuscado.nombreUsuario, email)
     res
       .status(200)
       .json({
