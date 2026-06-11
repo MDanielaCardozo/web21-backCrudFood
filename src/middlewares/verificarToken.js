@@ -6,7 +6,8 @@ const verificarJWT = (req, res, next) => {
         if(!token) {
             return res.status(401).json({mensaje: 'No hay token en la peticion'})
         }
-        const payload = payload.usuario
+        const payload = jwt.verify(token, process.env.SECRETJWT);
+        req.usuario = payload.usuario
         next()
     } catch (error) {
         console.error(error)
