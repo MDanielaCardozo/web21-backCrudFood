@@ -1,5 +1,6 @@
 import bcrypt from "bcrypt";
 import Usuario from "../models/usuario.js";
+import generarJWT from "../middlewares/generarJWT.js";
 
 export const crearUsuario = async (req, res) => {
     try {
@@ -41,7 +42,9 @@ export const login = async (req, res) => {
         if (!passwordValido) {
             return res.status(401).json({ mensaje: "Contraseña incorrecta"})
         }
-        res.status(200).json({ mensaje: "Usuario logueado correctamente", usuario: usuarioBuscado.nombreUsuario})
+        //generar el token
+        const token = generarJWT(usuarioBuscado.nombreUsuario, email)
+        res.status(200).json({ mensaje: "Usuario logueado correctamente", usuario: usuarioBuscado.nombreUsuario, token})
     } catch (error) {
         console.error(error);
         res
